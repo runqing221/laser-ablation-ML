@@ -40,7 +40,7 @@ The same dataset is retained here so the model can run independently. Any appare
 - `data/ablation_data.xlsx` — original measurement table
 - `data/ablation_data.csv` — tidy model input
 - `figures/` — model comparison, diagnostics, feature importance, and prediction surface
-- `results/` — data checks, tuning details, evaluation tables, and held-out predictions
+- `results/` — evaluation tables, validation checks, and held-out predictions
 
 ## Reproduce the results
 
