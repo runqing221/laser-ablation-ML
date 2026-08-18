@@ -35,11 +35,12 @@ The same dataset is retained here so the model can run independently. Any appare
 
 ## Files
 
+- `src/train_model.py` — reproducible command-line training and evaluation pipeline
 - `notebooks/random_forest_analysis.ipynb` — end-to-end modelling workflow
 - `data/ablation_data.xlsx` — original measurement table
 - `data/ablation_data.csv` — tidy model input
 - `figures/` — model comparison, diagnostics, feature importance, and prediction surface
-- `results/` — evaluation tables, tuning results, and held-out predictions
+- `results/` — data checks, tuning details, evaluation tables, and held-out predictions
 
 ## Reproduce the results
 
@@ -47,10 +48,16 @@ The same dataset is retained here so the model can run independently. Any appare
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-jupyter lab
+python src/train_model.py
 ```
 
-Start Jupyter from the repository root, open `notebooks/random_forest_analysis.ipynb`, and run all cells. The notebook uses fixed random seeds and writes derived tables and figures to the repository folders.
+The script can be launched from any working directory. It validates the input data, runs the complete modelling workflow with fixed random seeds, and writes derived tables and figures to `results/` and `figures/`. To test without replacing the tracked outputs, use:
+
+```bash
+python src/train_model.py --output-root reproduced_run
+```
+
+For the annotated research narrative, start Jupyter from the repository root, open `notebooks/random_forest_analysis.ipynb`, and run all cells.
 
 ## Tools
 
